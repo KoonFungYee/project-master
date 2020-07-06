@@ -172,7 +172,7 @@ class _MamamainpageState extends State<Mamamainpage> {
                 Container(
                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   width: 180,
-                  height: 60,
+                  // height: 60,
                   child: 
                   (food.length == 0)
                       ? Column()

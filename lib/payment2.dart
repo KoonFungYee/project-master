@@ -29,18 +29,18 @@ class _Payment2State extends State<Payment2> {
       child: Scaffold(
         backgroundColor: Color.fromRGBO(0, 0, 128, 1),
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
+          preferredSize: Size.fromHeight(1),
           child: AppBar(
             backgroundColor: Color.fromRGBO(0, 0, 205, 0.5),
-            elevation: 1,
+            elevation: 0,
             centerTitle: true,
-            title: Text(
-              "Housewife 01",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
+            // title: Text(
+            //   "Housewife 01",
+            //   style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: 20,
+            //       fontWeight: FontWeight.bold),
+            // ),
           ),
         ),
         body: SingleChildScrollView(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'mainPage.dart';
 import 'payment2.dart';
 
-void main() => runApp(Payment());
+// void main() => runApp(Payment());
 
 class Payment extends StatelessWidget {
   @override
@@ -45,18 +45,18 @@ class _PaymentPageState extends State<PaymentPage> {
       child: Scaffold(
         backgroundColor: Color.fromRGBO(0, 0, 128, 1),
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
+          preferredSize: Size.fromHeight(1),
           child: AppBar(
             backgroundColor: Color.fromRGBO(0, 0, 205, 0.5),
-            elevation: 1,
+            elevation: 0,
             centerTitle: true,
-            title: Text(
-              "Housewife 01",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
+            // title: Text(
+            //   "Housewife 01",
+            //   style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: 20,
+            //       fontWeight: FontWeight.bold),
+            // ),
           ),
         ),
         body: SingleChildScrollView(
@@ -293,7 +293,7 @@ class _PaymentPageState extends State<PaymentPage> {
       builder: (BuildContext context) {
         return CupertinoAlertDialog(
           title: Text("Payment Successful"),
-          content: Text("Housewife 01 is your cooker now."),
+          // content: Text("Housewife 01 is your cooker now."),
           actions: <Widget>[
             FlatButton(
                 onPressed: () {

@@ -6,18 +6,18 @@ import 'package:http/http.dart' as http;
 
 import 'payment.dart';
 
-class Cookerlist extends StatefulWidget {
+class Cookerlist2 extends StatefulWidget {
   final String phone;
   final String cookerphone;
   final String cookername;
-  Cookerlist({Key key, this.phone, this.cookerphone, this.cookername})
+  Cookerlist2({Key key, this.phone, this.cookerphone, this.cookername})
       : super(key: key);
 
   @override
-  _CookerlistState createState() => _CookerlistState();
+  _Cookerlist2State createState() => _Cookerlist2State();
 }
 
-class _CookerlistState extends State<Cookerlist> {
+class _Cookerlist2State extends State<Cookerlist2> {
   String getDataURL = "http://192.168.43.245/fyp/getData.php";
   String cancelURL = "http://192.168.43.245/fyp/cancel.php";
   String startdate, person, day;
@@ -235,27 +235,6 @@ class _CookerlistState extends State<Cookerlist> {
             SizedBox(
               height: 50,
             ),
-            // Column(
-            //   mainAxisAlignment: MainAxisAlignment.end,
-            //   children: <Widget>[
-            //     MaterialButton(
-            //       shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(20.0)),
-            //       minWidth: double.infinity,
-            //       height: 50,
-            //       child: Text(
-            //         'Make Payment',
-            //         style: TextStyle(fontSize: 25, color: Colors.white),
-            //       ),
-            //       color: Colors.blueAccent,
-            //       textColor: Colors.white,
-            //       onPressed: _payment,
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -265,15 +244,36 @@ class _CookerlistState extends State<Cookerlist> {
                   minWidth: double.infinity,
                   height: 50,
                   child: Text(
-                    'Cancel',
+                    'Make Payment',
                     style: TextStyle(fontSize: 25, color: Colors.white),
                   ),
                   color: Colors.blueAccent,
                   textColor: Colors.white,
-                  onPressed: _submitDialogShow,
+                  onPressed: _payment,
                 ),
               ],
             ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: <Widget>[
+            //     MaterialButton(
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(20.0)),
+            //       minWidth: double.infinity,
+            //       height: 50,
+            //       child: Text(
+            //         'Cancel',
+            //         style: TextStyle(fontSize: 25, color: Colors.white),
+            //       ),
+            //       color: Colors.blueAccent,
+            //       textColor: Colors.white,
+            //       onPressed: _submitDialogShow,
+            //     ),
+            //   ],
+            // ),
           ]),
         ),
       ),

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'comment.dart';
 import 'cookerlist.dart';
+import 'cookerlist2.dart';
 import 'mainPage.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -178,7 +179,7 @@ class _CookerState extends State<Cooker> {
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => Cookerlist(
+                                          builder: (context) => Cookerlist2(
                                             phone: widget.phone,
                                             cookerphone: approveList[index].phone,
                                             cookername: approveList[index].name,

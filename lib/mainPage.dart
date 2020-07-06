@@ -177,11 +177,11 @@ class MainPageState extends State<MainPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 20,
+                                width: 10,
                               ),
                               Expanded(
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
                                       cookerList[index].name,
@@ -192,17 +192,21 @@ class MainPageState extends State<MainPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 20,
+                                width: 10,
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(
-                                    cookerList[index].address,
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.black),
-                                  ),
-                                ],
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      cookerList[index].address,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                          fontSize: 20, color: Colors.black),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

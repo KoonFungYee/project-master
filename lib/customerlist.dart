@@ -18,7 +18,7 @@ class _CustomerlistState extends State<Customerlist> {
   ScrollController _scrollController = ScrollController();
   final ScrollController controller = ScrollController();
   List<Customer> customerList = [];
-  List existingCustomerList = [];
+  List<Customer> existingCustomerList = [];
   bool ready, data, customer;
   String customerListURL = "http://192.168.43.245/fyp/customerList.php";
   String existingCustomerListURL =
@@ -214,7 +214,11 @@ class _CustomerlistState extends State<Customerlist> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  Customerdetail(),
+                                                  Customerdetail(
+                                                    phone: widget.phone,
+                                                    custName: existingCustomerList[index].name,
+                                                    custPhone: existingCustomerList[index].phone,
+                                                  ),
                                             ));
                                       },
                                       child: Container(
@@ -239,7 +243,7 @@ class _CustomerlistState extends State<Customerlist> {
                                             MainAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            existingCustomerList[index],
+                                            existingCustomerList[index].name,
                                             style: TextStyle(
                                                 fontSize: 20,
                                                 color: Colors.black),
@@ -319,7 +323,7 @@ class _CustomerlistState extends State<Customerlist> {
     http.post(customerListURL, body: {
       "phone": widget.phone,
     }).then((res) {
-      print(res.body);
+      // print(res.body);
       if (res.body != "nodata") {
         var list = json.decode(res.body);
         for (var data in list) {
@@ -346,10 +350,16 @@ class _CustomerlistState extends State<Customerlist> {
     http.post(existingCustomerListURL, body: {
       "phone": widget.phone,
     }).then((res) {
-      print(res.body);
+      // print(res.body);
       if (res.body != "nodata") {
         var list = json.decode(res.body);
-        existingCustomerList = list;
+        for (var data in list) {
+          Customer customer = Customer(
+            name: data['name'],
+            phone: data['phone'],
+          );
+          existingCustomerList.add(customer);
+        }
       }
       setState(() {
         customer = true;
